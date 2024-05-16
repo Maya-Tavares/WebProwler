@@ -1,0 +1,142 @@
+:root {
+    --color-light: #ffffff;
+    --color-dark: #490261;
+    --color-back: #0c8216;
+    --font-body: "Poppins";
+}
+
+* {
+    margin: 0;
+    /* box sizing vai usar o padding sem crescer tudo */
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+.logo{
+    color: var(--color-dark);
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-light);
+    font-weight: 600;
+}
+
+a:hover{
+    transition: 0.2s;
+    color: var(--color-back);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .3)), 
+    url(../images/fortnite-x-prowler-c7.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.container h1 {
+    color: var(--color-light);
+}
+
+.header-page{
+    width: 100%;
+    height: 100px;
+    /* deixa fixo o nav? */
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header-menu ul{
+    display: flex;
+    gap: 20px;
+}
+
+.hero{
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    color: var(--color-light);
+}
+
+.hero h2{
+    /* min, ?, max */
+    font-size: clamp(24px, 4vw, 40px);
+    margin-left: 20px;
+}
+
+
+.cards {
+    width: 90%;
+    min-height: 100vh;
+    margin: 20px auto;
+    text-align: center;
+
+    /* @LUIZ esse background to achando mt seco esse branco palido, qq ce acha? */
+
+    & h3 {
+        margin: 40px;
+        font-size: clamp(20px, 4vw, 30px);
+        font-weight: 500;
+    }
+
+    .cards-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: no-wrap;
+        justify-content: space-evenly;
+        gap: 30px;
+        
+
+        & .card-item {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            box-shadow: 1px 1 px 30px #000;
+            border-radius: 10px;
+
+            & img {
+                width: 50%
+                /* @LUIZ pensando em um efeito quando hover */
+            }
+            & h4{
+                font-size: 20px;
+            }
+            & p{
+                width: 90%;
+                font-size: 14px;
+                font-weight: 500;
+                text-wrap: balance;
+            }
+
+            /* responsivo */
+            @media(max-width: 1024px){
+                .card-item{
+                    width: 80%;
+                }
+            }
+
+        }
+
+    }
+
+
+}
