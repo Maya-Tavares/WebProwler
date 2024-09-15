@@ -1,142 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
 :root {
     --color-light: #ffffff;
-    --color-dark: #490261;
-    --color-back: #0c8216;
-    --font-body: "Poppins";
+    --color-purple: #690747;
+    --color-purple-light: rgb(125, 36, 185);
+    --color-green: #0c8216;
+    --color-black: #000000;
+    --color-gray: #1d1d1d;
 }
 
-* {
-    margin: 0;
-    /* box sizing vai usar o padding sem crescer tudo */
-    box-sizing: border-box;
-    font-family: var(--font-body);
+html {
+    font-size: 62.5%;
 }
 
-.logo{
-    color: var(--color-dark);
+body {
+    font-size: 1.6rem;
+    font-weight: 300;
 }
 
-ul,ol{
-    list-style: none;
+.custom-size {
+    width: 5rem;
+    height: 5rem;
+    padding-bottom: .5rem;
 }
 
-a{
-    text-decoration: none;
-    color: var(--color-light);
-    font-weight: 600;
+.custom-p {
+    padding: 7rem;
 }
 
-a:hover{
-    transition: 0.2s;
-    color: var(--color-back);
+.navbar {
+    a:hover {
+        color: var(--color-purple-light);
+        transition: .4s;
+    }
 }
 
-.container {
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .3)), 
-    url(../images/fortnite-x-prowler-c7.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+.carousel {
+
+    img {
+        max-height: 80vh;
+        min-height: 500px;
+    }
+
 }
 
-.container h1 {
-    color: var(--color-light);
+.storytelling {
+    min-height: 90vh;
+
+    img {
+        height: 80%;
+    }
 }
 
-.header-page{
-    width: 100%;
-    height: 100px;
-    /* deixa fixo o nav? */
-    display: flex; 
-    flex-direction: row;
+/* cards */
+
+.card-group {
     align-items: center;
     justify-content: center;
-    justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 3rem;
 }
 
-.header-menu ul{
-    display: flex;
-    gap: 20px;
+.cards {
+    min-height: 60vh;
 }
 
-.hero{
-    width: 100%;
-    height: calc(100vh - 100px);
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
+.card {
+
+    img {
+        width: 40%;
+        transition: .5s;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(30px 20px 2px var(--color-purple-light));
+    }
+}
+
+/* grid */
+
+.img-tam {
+    height: 50%;
+    width: 50%;
+}
+
+.custom-m {
+    margin-left: 5rem;
+}
+
+/* accordion */
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--color-purple-light);
     color: var(--color-light);
 }
 
-.hero h2{
-    /* min, ?, max */
-    font-size: clamp(24px, 4vw, 40px);
-    margin-left: 20px;
-}
+@media(width < 900px) {
 
-
-.cards {
-    width: 90%;
-    min-height: 100vh;
-    margin: 20px auto;
-    text-align: center;
-
-    /* @LUIZ esse background to achando mt seco esse branco palido, qq ce acha? */
-
-    & h3 {
-        margin: 40px;
-        font-size: clamp(20px, 4vw, 30px);
-        font-weight: 500;
+    .custom-m {
+        margin-left: auto;
     }
-
-    .cards-list {
-        width: 100%;
-        display: flex;
-        flex-wrap: no-wrap;
-        justify-content: space-evenly;
-        gap: 30px;
-        
-
-        & .card-item {
-            width: 100%;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-            box-shadow: 1px 1 px 30px #000;
-            border-radius: 10px;
-
-            & img {
-                width: 50%
-                /* @LUIZ pensando em um efeito quando hover */
-            }
-            & h4{
-                font-size: 20px;
-            }
-            & p{
-                width: 90%;
-                font-size: 14px;
-                font-weight: 500;
-                text-wrap: balance;
-            }
-
-            /* responsivo */
-            @media(max-width: 1024px){
-                .card-item{
-                    width: 80%;
-                }
-            }
-
-        }
-
-    }
-
-
 }
