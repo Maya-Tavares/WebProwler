@@ -8,7 +8,7 @@
 :root {
     --color-light: #ffffff;
     --color-purple: #690747;
-    --color-purple-light: rgb(125, 36, 185);
+    --color-purple-light: #7d24b9;
     --color-green: #0c8216;
     --color-black: #000000;
     --color-gray: #1d1d1d;
@@ -55,6 +55,8 @@ body {
     img {
         height: 80%;
     }
+
+
 }
 
 /* cards */
